@@ -10,10 +10,11 @@
         </div>
         
         <div>
-            {% for item in Posts %}
+            {% for item in posts reversed %}
             <div class="post-list">
-            <b>{{item.title}}</b>
-            <p>{{item.content}}</p>
+            <h2>{{item.title}}</h2>
+            <h5>{{item.created_date}}</h5>
+            <p>{{item.content|truncatewords:20}}</p>
             </div>
             {% endfor %}
         </div>

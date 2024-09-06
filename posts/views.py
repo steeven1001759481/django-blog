@@ -5,6 +5,6 @@ from .models import Post
 def indexView(request):
     posts = Post.objects.all()
     context = {
-        'Posts': posts
+        'posts': posts
     }
     return render(request, 'index.html', context)
