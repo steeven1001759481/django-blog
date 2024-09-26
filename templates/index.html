@@ -12,9 +12,10 @@
         <div>
             {% for item in posts reversed %}
             <div class="post-list">
-            <h2>{{item.title}}</h2>
-            <h5>{{item.created_date}}</h5>
-            <p>{{item.content|truncatewords:20}}</p>
+                <h2>{{item.title}}</h2>
+                <h5>{{item.created_date}}</h5>
+                <p>{{item.content|truncatewords:20}}</p>
+                <a href="post/{{item.id}}">Read More</a>
             </div>
             {% endfor %}
         </div>

@@ -8,3 +8,10 @@ def indexView(request):
         'posts': posts
     }
     return render(request, 'index.html', context)
+
+def postView(request, id):
+    postDetails = Post.objects.get(id=id)
+    context = {
+        'postDetails': postDetails,
+    }
+    return render(request, 'post.html', context)
