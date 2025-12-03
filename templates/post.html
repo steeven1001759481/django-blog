@@ -1,11 +1,9 @@
-<!doctype html>
-<html>
-    <head>
-    </head>
-    <body>
-        <div>
-            <h2>{{postDetails.title}}</h2>
-            <p>{{postDetails.content}}</p>
-        </div>
-    </body>
-</html>
+{% extends 'base.html' %}
+
+{% block content %}
+    <div>
+        <h2>{{postDetails.title}}</h2>
+        <p>{{postDetails.content}}</p>
+    </div>
+
+{% endblock %}

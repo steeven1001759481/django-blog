@@ -1,26 +1,15 @@
-{% load static%}
-<html>
-    <head>
-    </head>
-    <link rel="stylesheet" href="{%static 'style.css' %}">
+{% extends 'base.html' %}
 
-    <body>
-        <div class="header">
-            <h2>For a few blogs more</h2>
+{% block content %}
+    <div>
+        {% for item in posts reversed %}
+        <div class="post-list">
+            <h2><a href="post/{{item.id}}">{{item.title}}</a></h2>
+            <h5>{{item.created_date}}</h5>
+            <p>{{item.content|truncatewords:20}}</p>
+            <a href="post/{{item.id}}">Read More</a>
         </div>
-        
-        <div>
-            {% for item in posts reversed %}
-            <div class="post-list">
-                <h2>{{item.title}}</h2>
-                <h5>{{item.created_date}}</h5>
-                <p>{{item.content|truncatewords:20}}</p>
-                <a href="post/{{item.id}}">Read More</a>
-            </div>
-            {% endfor %}
-        </div>
+        {% endfor %}
+    </div>
 
-    </body>
-</html>
-
-
+{% endblock %}
